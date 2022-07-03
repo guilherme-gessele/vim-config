@@ -5,6 +5,8 @@ filetype off
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
+:set number
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
