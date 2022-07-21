@@ -17,6 +17,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rust-lang/rust.vim'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -41,3 +42,5 @@ set updatetime=300
 
 syntax enable
 filetype plugin indent on
+
+let python_highlight_all = 1
