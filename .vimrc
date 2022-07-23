@@ -2,8 +2,8 @@ set nocompatible
 set encoding=utf-8
 filetype off
 
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
 
 :set number
 
@@ -21,7 +21,10 @@ Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
-let g:ale_linters = {'rust': ['analyzer']}
+let g:ale_linters = {
+	\	'rust': ['analyzer'],
+	\	'python': ['pylint'],
+	\}
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -42,5 +45,12 @@ set updatetime=300
 
 syntax enable
 filetype plugin indent on
-
 let python_highlight_all = 1
+
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
